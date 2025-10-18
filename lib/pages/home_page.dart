@@ -16,6 +16,8 @@ class _HomePageState extends State<HomePage> {
   List<TaskModel> taskList = [];
   final TodoRepository todoRepository = TodoRepository();
 
+  String? errorEmptyTaskName;
+
   @override
   void initState() {
     super.initState();
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                           labelText: 'Tarefa',
                           hintText: 'Ex.: Estudar Flutter',
                           border: OutlineInputBorder(),
+                          errorText: errorEmptyTaskName,
                         ),
                       ),
                     ),
@@ -52,12 +55,21 @@ class _HomePageState extends State<HomePage> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
+                          if (taskController.text.isEmpty) {
+                            setState(() {
+                              errorEmptyTaskName =
+                                  'Defina um nome para sua tarefa!';
+                            });
+                            return;
+                          }
+
                           taskList.add(
                             TaskModel(
                               taskName: taskController.text,
                               dateTime: DateTime.now(),
                             ),
                           );
+                          errorEmptyTaskName = null;
                         });
                         taskController.clear();
                         todoRepository.saveTaskList(taskList);
