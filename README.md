@@ -2,7 +2,7 @@
 
 **Uma lista de tarefas simples desenvolvida com Flutter** 💙  
 
-> Projeto criado com o objetivo de estudo e portfólio, explorando os conceitos fundamentais do Flutter e o uso do pacote [flutter_slidable](https://pub.dev/packages/flutter_slidable) para interações modernas com gestos e [shared_preferences](https://pub.dev/packages/shared_preferences) para persistência de dados de forma local.
+> Projeto criado com o objetivo de estudo e portfólio, explorando os conceitos fundamentais do Flutter, o uso do pacote [flutter_slidable](https://pub.dev/packages/flutter_slidable) para interações modernas com gestos e [shared_preferences](https://pub.dev/packages/shared_preferences) para persistência de dados de forma local.
 
 ---
 
