@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/models/task_model.dart';
+import 'package:todo_list/repositories/todo_repository.dart';
 import 'package:todo_list/widgets/task_item_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,17 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController taskController = TextEditingController();
 
   List<TaskModel> taskList = [];
+  final TodoRepository todoRepository = TodoRepository();
+
+  @override
+  void initState() {
+    super.initState();
+    todoRepository.getTodoList().then((value) {
+      setState(() {
+        taskList = value;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +56,11 @@ class _HomePageState extends State<HomePage> {
                             TaskModel(
                               taskName: taskController.text,
                               dateTime: DateTime.now(),
-                              isDone: false,
                             ),
                           );
                         });
-
                         taskController.clear();
+                        todoRepository.saveTaskList(taskList);
                       },
                       child: Icon(Icons.add, size: 30),
                       style: ElevatedButton.styleFrom(
@@ -142,6 +153,8 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       taskListParam.clear();
     });
+
+    todoRepository.saveTaskList(taskListParam);
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -150,6 +163,7 @@ class _HomePageState extends State<HomePage> {
           label: 'Desfazer',
           onPressed: () => setState(() {
             taskList = [...deletedTaskList];
+            todoRepository.saveTaskList(taskList);
             print(taskList);
           }),
         ),
@@ -163,6 +177,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       taskList.remove(task);
     });
+    todoRepository.saveTaskList(taskList);
 
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -172,6 +187,7 @@ class _HomePageState extends State<HomePage> {
           label: 'Desfazer',
           onPressed: () => setState(() {
             taskList.insert(posDeletedTask, task);
+            todoRepository.saveTaskList(taskList);
           }),
         ),
         duration: Duration(seconds: 5),
