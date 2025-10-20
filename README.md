@@ -1,52 +1,52 @@
 # ✅ Flutter Training  
 
-**Uma lista de tarefas simples desenvolvida com Flutter** 💙  
+**A simple task list app built with Flutter** 💙  
 
-> Projeto criado com o objetivo de estudo e portfólio, explorando os conceitos fundamentais do Flutter, o uso do pacote [flutter_slidable](https://pub.dev/packages/flutter_slidable) para interações modernas com gestos e o [shared_preferences](https://pub.dev/packages/shared_preferences) para persistência de dados local.
-
----
-
-## 🧠 Sobre o projeto
-
-O **Flutter Training** é um aplicativo simples de lista de tarefas (to-do list), desenvolvido para treinar fundamentos de layout, estado e interatividade no Flutter.
-
-Você pode:
-- ➕ **Adicionar** novas tarefas  
-- 🗑️ **Excluir** tarefas individuais deslizando para o lado  
-- 🚮 **Limpar todas as tarefas** de uma só vez  
-
-Interface limpa, responsiva e feita do zero com **Flutter puro**.
+> Project created for learning and portfolio purposes, exploring Flutter’s fundamental concepts, the [flutter_slidable](https://pub.dev/packages/flutter_slidable) package for modern swipe interactions, and [shared_preferences](https://pub.dev/packages/shared_preferences) for local data persistence.
 
 ---
 
-## ⚙️ Tecnologias utilizadas
+## 🧠 About the Project  
 
-- 🧩 **Flutter**
-- 🎯 **Dart**
-- 📱 **flutter_slidable** (para ações deslizáveis nos itens da lista)
+**Flutter Training** is a simple to-do list application designed to practice layout, state management, and interactivity in Flutter.  
 
----
+You can:  
+- ➕ **Add** new tasks  
+- 🗑️ **Delete** individual tasks by swiping sideways  
+- 🚮 **Clear all tasks** at once  
 
-## 💻 Pré-requisitos
-
-Antes de rodar o projeto, certifique-se de ter instalado:
-- [Flutter SDK](https://flutter.dev/docs/get-started/install)
-- [Dart SDK](https://dart.dev/get-dart)
-- Um editor como [VS Code](https://code.visualstudio.com/) ou [Android Studio](https://developer.android.com/studio)
+Clean, responsive interface built entirely with **pure Flutter**.
 
 ---
 
-## 🚀 Como executar
+## ⚙️ Technologies Used  
+
+- 🧩 **Flutter**  
+- 🎯 **Dart**  
+- 📱 **flutter_slidable** (for swipeable actions on list items)
+
+---
+
+## 💻 Prerequisites  
+
+Before running the project, make sure you have installed:  
+- [Flutter SDK](https://flutter.dev/docs/get-started/install)  
+- [Dart SDK](https://dart.dev/get-dart)  
+- An editor such as [VS Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio)
+
+---
+
+## 🚀 How to Run  
 
 ```bash
-# Clone este repositório
+# Clone this repository
 git clone https://github.com/Patrick-Gonzaga/FlutterTraining.git
 
-# Acesse a pasta do projeto
+# Navigate into the project folder
 cd FlutterTraining
 
-# Instale as dependências
+# Install dependencies
 flutter pub get
 
-# Execute o app
+# Run the app
 flutter run
